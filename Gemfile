@@ -12,3 +12,8 @@ end
 group :test do
   gem "html-proofer"
 end
+
+platforms :mingw, :x64_mingw, :mswin, :jruby do
+  gem "tzinfo"
+  gem "tzinfo-data"
+end
