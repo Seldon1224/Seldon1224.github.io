@@ -12,5 +12,5 @@ title: About
 >
 > ​	QQ: 1289630318
 >
-> ​	Mail: Seldon1224@foxmail.com
+> ​	Mail: seldon1224@foxmail.com
 
