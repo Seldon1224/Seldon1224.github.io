@@ -8,12 +8,12 @@
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 #--------------------------
 
-title: Seldon's Bolg                          # the main title
+title: Seldon's Blog                          # the main title
 
-tagline: Welecome to My Bolg.  # it will display as the sub-title
+tagline: Welecome to My Blog.  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
-  Welecome to My Bolg.
+  Welecome to My Blog.
 
 # Replace with the website url, e.g. 'https://username.github.io'
 url: 'https://seldon1224.github.io'
