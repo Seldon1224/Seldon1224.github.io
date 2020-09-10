@@ -10,10 +10,14 @@
 
 title: Seldon's Blog                          # the main title
 
-tagline: Welecome to My Blog.  # it will display as the sub-title
+tagline: Welecome to My Blog.
+         My learning record of coding.
+         A SWJTUer in Chengdu.  # it will display as the sub-title
 
 description: >-                        # used by seo meta and the atom feed
   Welecome to My Blog.
+  My learning record of coding.
+  A SWJTUer in Chengdu.
 
 # Replace with the website url, e.g. 'https://username.github.io'
 url: 'https://seldon1224.github.io'
