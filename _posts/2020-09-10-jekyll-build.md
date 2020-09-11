@@ -4,7 +4,7 @@ categories: [Jekyll, 博客搭建]
 tags: [博客搭建] 
 ---
 
-# Jekyll博客搭建
+# 基于Github Pages的Jekyll博客搭建
 
 GitHub搭建个人网站可基于jekyll或者hexo或者其它的静态网页生成工具。
 
@@ -58,6 +58,6 @@ Jekyll + Github Pages可以让我们更加专注于博客内容，而不是考�
 >
 >  markdown文档开头可以加上yaml头信息，jekyll就会将其转换成html文件。
 >
-> yaml头信息中也可以定义自已的变量，比如title，在文中使用的方法：{{ page.title }}。
+> yaml头信息中也可以定义自已的变量，比如title，在文中使用的方法：{ { page.title } }。
 
 ![](https://s1.ax1x.com/2020/09/11/wNP7Uf.jpg)
