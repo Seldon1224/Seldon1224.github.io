@@ -11,6 +11,4 @@ title: About
 >  **联系我：**
 >
 > ​	QQ: 1289630318
->
-> ​	Mail: seldon1224@foxmail.com
 
