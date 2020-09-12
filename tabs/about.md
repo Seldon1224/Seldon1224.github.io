@@ -12,3 +12,5 @@ title: About
 >
 > ​	QQ: 1289630318
 
+## 友情链接：
+* [饮冰室](https://youngvoice.online)
