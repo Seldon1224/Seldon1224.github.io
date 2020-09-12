@@ -119,7 +119,7 @@ tags: [Android学习]
 ​	在Activity中加入以下代码：
 
     ```java
-settings.setJavaScriptEnabled(true);
+    settings.setJavaScriptEnabled(true);
     ```
 
 ### 2.3 按下返回键后，直接退出了整个程序
