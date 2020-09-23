@@ -20,7 +20,7 @@ tags: [Android学习]
           @Override
           public void run() {
               //para为post要提交的数据
-              String para = "user_name=" + userName + "user_password=" + passWord;
+              String para = "user_name=" + userName + "&user_password=" + passWord;
               HttpURLConnection connection = null;
               BufferedReader reader = null;
               try {
