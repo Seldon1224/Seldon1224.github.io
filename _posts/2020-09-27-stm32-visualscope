@@ -1,7 +1,9 @@
+---
 title: 上位机-VisualScope的使用
 categories: [stm32, 上位机]
 tags: ['stm32']
 published: true
+---
 
 # VisualScope使用说明（基于stm32）
 
@@ -113,4 +115,4 @@ unsigned short CRC_CHECK(unsigned char *Buf, unsigned char CRC_CNT)
 
 * 在程序调用display(float ch1, float ch2, float ch3, float ch4)，显示想要输出波形的数字。
 
-![image-20200927105034192](C:/Users/NewAdmin/AppData/Roaming/Typora/typora-user-images/image-20200927105034192.png)
+![0FyPhj.png](https://s1.ax1x.com/2020/09/27/0FyPhj.png)
