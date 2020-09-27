@@ -1,25 +1,116 @@
----
-title: 机械臂-正逆运动学分析
-categories: [其他, 运动学分析]
-tags: ['运动学']
-published: false
----
+title: 上位机-VisualScope的使用
+categories: [stm32, 上位机]
+tags: ['stm32']
+published: true
 
-# 机械臂运动学分析
+# VisualScope使用说明（基于stm32）
 
-最近要开始做工训比赛，没了解过机械臂控制，总结下机械臂的运动学分析。
+VisualScope可以通过串口显示波形，方便调节pid参数。
 
-![](https://img-blog.csdnimg.cn/20200305213713479.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3poaWhlX3JpZ2h0,size_16,color_FFFFFF,t_70)
+## 1.添加文件（Visual_Scope.h/.c）
 
-* 正运动学：
-
-  已知机械臂关节角，求对应的机械臂末端位置和姿态。
-
-* 逆运动学：
-
-  已知机械臂末端位置和姿态，求解对应机械臂关节角。
-
-## 1.基础知识
+```c
+//.h
+#ifndef __VISUAL_SCOPE__
+#define __VISUAL_SCOPE__
+		 
+#include "usart.h"
 
 
+unsigned short CRC_CHECK(unsigned char *Buf, unsigned char CRC_CNT);
+void display(float ch1, float ch2, float ch3, float ch4);
 
+
+#endif    
+```
+
+```c
+//.c
+#include "Visual_Scope.h"
+void VisualScope_Output(float data1 ,float data2 ,float data3 ,float data4)
+{
+  int temp[4] = {0};
+  unsigned int temp1[4] = {0};
+  unsigned char databuf[10] = {0};
+  int i;
+  unsigned short CRC16 = 0;
+
+  temp[0] = (int)data1;
+  temp[1] = (int)data2;
+  temp[2] = (int)data3;
+  temp[3] = (int)data4;
+
+  temp1[0] = (unsigned int)temp[0];
+  temp1[1] = (unsigned int)temp[1];
+  temp1[2] = (unsigned int)temp[2];
+  temp1[3] = (unsigned int)temp[3];
+  
+  for(i=0;i<4;i++) 
+  {
+    databuf[i*2]   = (unsigned char)(temp1[i]%256);
+    databuf[i*2+1] = (unsigned char)(temp1[i]/256);
+  }
+  
+	
+  CRC16 = CRC_CHECK(databuf, 8);
+  databuf[8] = CRC16%256;
+  databuf[9] = CRC16/256; 
+  for(i=0; i<10; i++)
+  {
+		while((huart1.Instance->SR & 0x40)==0);
+		HAL_UART_Transmit(&huart1, &databuf[i], 1, 0xffff);
+		
+  }
+}
+
+void display(float ch1, float ch2, float ch3, float ch4)
+{
+	float OutData[4];
+	OutData[0] = ch1;
+	OutData[1] = ch2;
+	OutData[2] = ch3;
+	OutData[3] =ch4;
+	VisualScope_Output(OutData[0],OutData[1] ,OutData[2] ,OutData[3]);
+	//delay_ms(1000);
+}
+
+
+//-------------------------------------------------------------------------------------------
+//The following is the function of CRC16,please refer
+//-------------------------------------------------------------------------------------------
+unsigned short CRC_CHECK(unsigned char *Buf, unsigned char CRC_CNT)
+{
+    unsigned short CRC_Temp;
+    unsigned char i,j;
+    CRC_Temp = 0xffff;
+
+    for (i=0;i<CRC_CNT; i++){      
+        CRC_Temp ^= Buf[i];
+        for (j=0;j<8;j++) {
+            if (CRC_Temp & 0x01)
+                CRC_Temp = (CRC_Temp >>1 ) ^ 0xa001;
+            else
+                CRC_Temp = CRC_Temp >> 1;
+        }
+    }
+    return(CRC_Temp);
+}
+//-------------------------------------------------------------------------------------------
+//The above is the function of CRC16,please refer
+//-------------------------------------------------------------------------------------------
+
+```
+
+## 2. 软件设置
+
+* 设置波特率
+
+  [![0FrwZD.png](https://s1.ax1x.com/2020/09/27/0FrwZD.png)](https://imgchr.com/i/0FrwZD)
+
+* 选择CRC16校验
+
+  [![0FroJs.png](https://s1.ax1x.com/2020/09/27/0FroJs.png)](https://imgchr.com/i/0FroJs)
+
+* 在程序调用display(float ch1, float ch2, float ch3, float ch4)，显示想要输出波形的数字。
+
+![image-20200927105034192](C:/Users/NewAdmin/AppData/Roaming/Typora/typora-user-images/image-20200927105034192.png)
