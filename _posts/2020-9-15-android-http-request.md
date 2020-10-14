@@ -1,7 +1,7 @@
 ---
 title: Android学习-网络请求
 categories: [Java, Android学习]
-tags: [Android学习]
+tags: [Android]
 ---
 
 # Android开发-发送post以及get请求
@@ -59,7 +59,7 @@ tags: [Android学习]
   }
   ```
 
-  > android4.0以后不能在主线程发起网络请求，应该在主线程中开启一个新线程去发起网络请求
+  > android4.0以后不能在**主线程**发起网络请求，应该在主线程中开启一个新线程去发起网络请求
 
 * OKHttp
 
@@ -83,7 +83,7 @@ tags: [Android学习]
 
 因此在Android 高版本中使用HttpUrlConnection进行http请求会出现以下异常:
 
-[![wyBILd.png](https://s1.ax1x.com/2020/09/15/wyBILd.png)](https://imgchr.com/i/wyBILd)
+![wyBILd.png](https://s1.ax1x.com/2020/09/15/wyBILd.png)](https://imgchr.com/i/wyBILd)
 
 **解决办法：**
 

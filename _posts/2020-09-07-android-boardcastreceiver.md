@@ -1,7 +1,7 @@
 ---
 title: Android学习-BroadcastReceiver详解及应用
 categories: [Java, Android学习]
-tags: [Android学习]
+tags: [Android]
 ---
 
 # **BroadcastReceiver** 详解及应用

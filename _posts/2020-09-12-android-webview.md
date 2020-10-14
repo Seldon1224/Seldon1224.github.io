@@ -1,7 +1,7 @@
 ---
 title: Android学习-WebView控件的使用
 categories: [Java, Android学习]
-tags: [Android学习]
+tags: [Android]
 comments: true
 ---
 

@@ -21,7 +21,6 @@ VisualScope可以通过串口显示波形，方便调节pid参数。
 unsigned short CRC_CHECK(unsigned char *Buf, unsigned char CRC_CNT);
 void display(float ch1, float ch2, float ch3, float ch4);
 
-
 #endif    
 ```
 
