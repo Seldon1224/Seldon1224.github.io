@@ -1,5 +1,5 @@
 ---
-title: Android学习-Scoket编写
+title: Android学习-Scoket编程
 categories: [Java, Android学习]
 tags: ['Android','Socket']
 ---
@@ -21,7 +21,7 @@ tags: ['Android','Socket']
 
 * 客户端，服务器具体原理图：
 
-​	![](https://upload-images.jianshu.io/upload_images/944365-8df0ed7afe6b32d1.png?imageMogr2/auto-orient/strip|imageView2/2/w/610/format/webp)
+  ![05N5MF.png](https://s1.ax1x.com/2020/10/14/05N5MF.png)
 
 * Java-Socket编程
 
