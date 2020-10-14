@@ -19,9 +19,9 @@ tags: ['Android','Socket']
      * TCP（Transmission Control Protocol，传输控制协议）是面向连接的协议，在收发数据前，必须和对方建立可靠的连接。此方式大大提高了数据通信的可靠性，使发送数据端和接收端在数据正式传输前就有了交互， 为数据正式传输打下了可靠的基础。
      * UDP是一个**非连接**的协议，传输数据之前源端和终端**不建立连接**， 当它想传送时就简单地去抓取来自应用程序的数据，并尽可能快地把它扔到网络上。 在发送端，UDP传送数据的速度仅仅是受应用程序生成数据的速度、 计算机的能力和传输带宽的限制； 在接收端，UDP把每个消息段放在队列中，应用程序每次从队列中读一个消息段。
 
-* Socket客户端、服务器具体原理图
+* 客户端，服务器具体原理图：
 
-​	![](https://upload-images.jianshu.io/upload_images/944365-8df0ed7afe6b32d1.png?imageMogr2/auto-orient/strip)
+​	![](https://upload-images.jianshu.io/upload_images/944365-8df0ed7afe6b32d1.png?imageMogr2/auto-orient/strip|imageView2/2/w/610/format/webp)
 
 * Java-Socket编程
 
