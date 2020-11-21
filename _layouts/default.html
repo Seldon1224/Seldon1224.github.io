@@ -26,7 +26,29 @@ layout: compress
   {% include head.html %}
 
   <body data-spy="scroll" data-target="#toc">
-
+    <script src="./lib/L2Dwidget.min.js"></script>
+    <script type="text/javascript">
+      L2Dwidget
+        .on('*', (name) => {
+          console.log('%c EVENT ' + '%c -> ' + name, 'background: #222; color: yellow', 'background: #fff; color: #000')
+        })
+        .init({
+          dialog: {
+            
+            enable: true,
+            script: {
+              
+              'every idle 10s': '$hitokoto$',
+             
+              'hover .star': '星星在天上而你在我心里 (*/ω＼*)',
+              
+              'tap body': '哎呀！别碰我！',
+             
+              'tap face': '人家已经不是小孩子了！'
+            }
+          }
+        });
+    </script>
     <div id="sidebar" class="d-flex flex-column">
       {% include sidebar.html %}
     </div>
@@ -51,13 +73,13 @@ layout: compress
     <a id="back-to-top" href="#" class="btn btn-lg btn-box-shadow" role="button">
       <i class="fas fa-angle-up"></i>
     </a>
-
+    
     {% if jekyll.environment == 'production' %}
       {% include google-analytics.html %}
     {% endif %}
 
     {% include search-loader.html %}
-
+    
   </body>
 
 </html>
